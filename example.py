@@ -52,7 +52,7 @@ twitch_miner = TwitchChannelPointsMiner(
         discord=Discord(
             webhook_api="https://discord.com/api/webhooks/0123456789/0a1B2c3D4e5F6g7H8i9J",  # Discord Webhook URL
             events=[Events.STREAMER_ONLINE, Events.STREAMER_OFFLINE,
-                    Events.BET_LOSE, Events.CHAT_MENTION],                                  # Only these events will be sent to the chat
+                    Events.BET_LOSE, Events.BET_WIN],                                  # Only these events will be sent to the chat
         ),
         webhook=Webhook(
             endpoint="https://example.com/webhook",                                                                    # Webhook URL
@@ -90,7 +90,7 @@ twitch_miner = TwitchChannelPointsMiner(
         community_goals=False,                  # If True, contributes the max channel points per stream to the streamers' community challenge goals
         chat=ChatPresence.ONLINE,               # Join irc chat to increase watch-time [ALWAYS, NEVER, ONLINE, OFFLINE]
         bet=BetSettings(
-            strategy=Strategy.SMART,            # Choose you strategy!
+            strategy=Strategy.SMART,            # Choose your strategy!
             percentage=5,                       # Place the x% of your channel points
             percentage_gap=20,                  # Gap difference between outcomesA and outcomesB (for SMART strategy)
             max_points=50000,                   # If the x percentage of your channel points is gt bet_max_points set this value
@@ -125,6 +125,11 @@ twitch_miner.mine(
         Streamer("sideshow"),
         Streamer("trent_fps"),
         Streamer("eggsterr"),
+        Streamer("curry"),
+        Streamer("bonifaci0_"),
+        Streamer("mooda"),
+        Streamer("stableronaldo")
+        Streamer("tenz")
     ],                                  # Array of streamers (order = priority)
     followers=False,                    # Automatic download the list of your followers
     followers_order=FollowersOrder.ASC  # Sort the followers list by follow date. ASC or DESC
