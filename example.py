@@ -121,7 +121,7 @@ twitch_miner.mine(
     [
         Streamer("thinkingmansvalo"),
         Streamer("valorant_americas"),
-        Streamer("streamer-username08"),
+        Streamer("zekken"),
         Streamer("sideshow"),
         Streamer("trent_fps"),
         Streamer("eggsterr"),
