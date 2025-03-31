@@ -130,6 +130,13 @@ twitch_miner.mine(
         Streamer("mooda"),
         Streamer("stableronaldo"),
         Streamer("tenz"),
+        Streamer("astralspiff"),
+        Streamer("inspire"),
+        Streamer("shahzam"),
+        Streamer("ohnepixel"),
+        Streamer("shanks_ttv"),
+        Streamer("xeppaa"),
+        Streamer("shroud"),
         Streamer("curry")
     ],                                  # Array of streamers (order = priority)
     followers=False,                    # Automatic download the list of your followers
