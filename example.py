@@ -128,7 +128,7 @@ twitch_miner.mine(
         Streamer("curry"),
         Streamer("bonifaci0_"),
         Streamer("mooda"),
-        Streamer("stableronaldo")
+        Streamer("stableronaldo"),
         Streamer("tenz")
     ],                                  # Array of streamers (order = priority)
     followers=False,                    # Automatic download the list of your followers
