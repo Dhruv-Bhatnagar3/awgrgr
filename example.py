@@ -90,18 +90,18 @@ twitch_miner = TwitchChannelPointsMiner(
         community_goals=True,                  # If True, contributes the max channel points per stream to the streamers' community challenge goals
         chat=ChatPresence.ONLINE,               # Join irc chat to increase watch-time [ALWAYS, NEVER, ONLINE, OFFLINE]
         bet=BetSettings(
-            strategy=Strategy.SMART_MONEY,            # Choose your strategy!
-            percentage=10,                       # Place the x% of your channel points
+            strategy=Strategy.SMART_MONEY,            # Choose you strategy!
+            percentage=20,                       # Place the x% of your channel points
             percentage_gap=20,                  # Gap difference between outcomesA and outcomesB (for SMART strategy)
-            max_points=20000,                   # If the x percentage of your channel points is gt bet_max_points set this value
-            stealth_mode=True,                  # If the calculated amount of channel points is GT the highest bet, place the highest value minus 1-2 points Issue #33
-            delay_mode=DelayMode.FROM_END,      # When placing a bet, we will wait until `delay` seconds before the end of the timer
-            delay=15,
-            minimum_points=250,               # Place the bet only if we have at least 20k points. Issue #113
+            max_points=5000,                   # If the x percentage of your channel points is gt bet_max_points set this value
+            stealth_mode=False,                  # If the calculated amount of channel points is GT the highest bet, place the highest value minus 1-2 points Issue #33
+            delay_mode=DelayMode.FROM_START,      # When placing a bet, we will wait until `delay` seconds before the end of the timer
+            delay=60,
+            minimum_points=1,               # Place the bet only if we have at least 20k points. Issue #113
             filter_condition=FilterCondition(
-                by=OutcomeKeys.TOTAL_USERS,     # Where apply the filter. Allowed [PERCENTAGE_USERS, ODDS_PERCENTAGE, ODDS, TOP_POINTS, TOTAL_USERS, TOTAL_POINTS]
-                where=Condition.LTE,            # 'by' must be [GT, LT, GTE, LTE] than value
-                value=9999999
+                by=OutcomeKeys.ODDS,     # Where apply the filter. Allowed [PERCENTAGE_USERS, ODDS_PERCENTAGE, ODDS, TOP_POINTS, TOTAL_USERS, TOTAL_POINTS]
+                where=Condition.GTE,            # 'by' must be [GT, LT, GTE, LTE] than value
+                value=1.05
             )
         )
     )
