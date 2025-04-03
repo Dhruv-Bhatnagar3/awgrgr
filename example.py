@@ -35,7 +35,7 @@ twitch_miner = TwitchChannelPointsMiner(
         time_zone="",                           # Set a specific time zone for console and file loggers. Use tz database names. Example: "America/Denver"
         file_level=logging.DEBUG,               # Level of logs - If you think the log file it's too big, use logging.INFO
         emoji=True,                             # On Windows, we have a problem printing emoji. Set to false if you have a problem
-        less=False,                             # If you think that the logs are too verbose, set this to True
+        less=True,                             # If you think that the logs are too verbose, set this to True
         colored=True,                           # If you want to print colored text
         color_palette=ColorPalette(             # You can also create a custom palette color (for the common message).
             STREAMER_online="GREEN",            # Don't worry about lower/upper case. The script will parse all the values.
@@ -50,7 +50,7 @@ twitch_miner = TwitchChannelPointsMiner(
             disable_notification=True,                                              # Revoke the notification (sound/vibration)
         ),
         discord=Discord(
-            webhook_api="https://discord.com/api/webhooks/1120608017793159189/lKT0qgb5hLLc-Z4q58k_cA8Ku7oioqVOWwP-M8lZzqG-q3_8_QZempRzwKV5grVNKFSz",  # Discord Webhook URL
+            webhook_api="https://discord.com/api/webhooks/1357491785492070430/PgSXGa0D3p_ysU_f_XkDYvhgyaOgAqbZKiJaKefKMHle3W-UaK1m4BuL4UADXpZgn2MR",  # Discord Webhook URL
             events=[Events.STREAMER_ONLINE, Events.STREAMER_OFFLINE,
                     Events.BET_LOSE, Events.BET_WIN],                                  # Only these events will be sent to the chat
         ),
@@ -139,6 +139,7 @@ twitch_miner.mine(
         Streamer("xeppaa"),
         Streamer("shroud"),
         Streamer("curry", settings=StreamerSettings(make_predictions=True  , follow_raid=True  , claim_drops=True ,  watch_streak=True , bet=BetSettings(strategy=Strategy.HIGH_ODDS  , percentage=5 , stealth_mode=True,  percentage_gap=20 , max_points=10000    , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_USERS, where=Condition.LTE, value=999999 ) ) )),
+        Streamer("rainbow6")
     ],                                  # Array of streamers (order = priority)
     followers=False,                    # Automatic download the list of your followers
     followers_order=FollowersOrder.ASC  # Sort the followers list by follow date. ASC or DESC
