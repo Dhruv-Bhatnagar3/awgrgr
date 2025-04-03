@@ -90,7 +90,7 @@ twitch_miner = TwitchChannelPointsMiner(
         community_goals=True,                  # If True, contributes the max channel points per stream to the streamers' community challenge goals
         chat=ChatPresence.ONLINE,               # Join irc chat to increase watch-time [ALWAYS, NEVER, ONLINE, OFFLINE]
         bet=BetSettings(
-            strategy=Strategy.SMART,            # Choose your strategy!
+            strategy=Strategy.SMART_MONEY,            # Choose your strategy!
             percentage=10,                       # Place the x% of your channel points
             percentage_gap=20,                  # Gap difference between outcomesA and outcomesB (for SMART strategy)
             max_points=20000,                   # If the x percentage of your channel points is gt bet_max_points set this value
@@ -137,7 +137,6 @@ twitch_miner.mine(
         Streamer("shanks_ttv"),
         Streamer("xeppaa"),
         Streamer("shroud"),
-        Streamer("curry")
     ],                                  # Array of streamers (order = priority)
     followers=False,                    # Automatic download the list of your followers
     followers_order=FollowersOrder.ASC  # Sort the followers list by follow date. ASC or DESC
