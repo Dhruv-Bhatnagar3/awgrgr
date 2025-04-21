@@ -94,8 +94,8 @@ twitch_miner = TwitchChannelPointsMiner(
             percentage_gap=20,                  # Gap difference between outcomesA and outcomesB (for SMART strategy)
             max_points=10000,                   # If the x percentage of your channel points is gt bet_max_points set this value
             stealth_mode=True,                  # If the calculated amount of channel points is GT the highest bet, place the highest value minus 1-2 points Issue #33
-            delay_mode=DelayMode.PERCENTAGE,      # When placing a bet, we will wait until `delay` seconds before the end of the timer
-            delay=0.95,
+            delay_mode=DelayMode.FROM_END,      # When placing a bet, we will wait until `delay` seconds before the end of the timer
+            delay=6,
             minimum_points=20000,
             # Place the bet only if we have at least 20k points. Issue #113
             filter_condition=[
