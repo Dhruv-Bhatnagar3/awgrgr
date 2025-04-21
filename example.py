@@ -132,6 +132,7 @@ twitch_miner.mine(
         Streamer("tenz"),
         Streamer("astralspiff"),
         Streamer("polrrz"),
+        Streamer("valynfps"),
         Streamer("luk_xoxo"),
         Streamer("inspire"),
         Streamer("shahzam"),
