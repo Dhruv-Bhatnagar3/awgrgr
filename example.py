@@ -96,18 +96,25 @@ twitch_miner = TwitchChannelPointsMiner(
             stealth_mode=True,                  # If the calculated amount of channel points is GT the highest bet, place the highest value minus 1-2 points Issue #33
             delay_mode=DelayMode.PERCENTAGE,      # When placing a bet, we will wait until `delay` seconds before the end of the timer
             delay=0.95,
-            minimum_points=10000,               # Place the bet only if we have at least 20k points. Issue #113
-            filter_condition=FilterCondition(
-                by=OutcomeKeys.ODDS,     # Where apply the filter. Allowed [PERCENTAGE_USERS, ODDS_PERCENTAGE, ODDS, TOP_POINTS, TOTAL_USERS, TOTAL_POINTS]
-                where=Condition.LTE,            # 'by' must be [GT, LT, GTE, LTE] than value
-                value=4.5,
-                by=OutcomeKeys.ODDS,
-                where=Condition.GTE,
-                value=1.80,
-                by=OutcomeKeys.TOTAL_POINTS,
-                where=Condition.GTE,
-                value=10000)
-            )
+            minimum_points=20000,
+            # Place the bet only if we have at least 20k points. Issue #113
+            filter_condition=[
+                FilterCondition(
+                    by=OutcomeKeys.ODDS,
+                    where=Condition.GTE,
+                    value=1.8
+                ),
+                FilterCondition(
+                    by=OutcomeKeys.ODDS,
+                    where=Condition.LTE,
+                    value=4.5
+                ),
+                FilterCondition(
+                    by=OutcomeKeys.TOTAL_POINTS,
+                    where=Condition.GTE,
+                    value=10000
+                )
+            ]    
         )
     )
 )
