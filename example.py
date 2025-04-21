@@ -125,23 +125,15 @@ twitch_miner.mine(
         Streamer("sideshow"),
         Streamer("trent_fps"),
         Streamer("eggsterr"),
-        Streamer("bonifaci0_"),
         Streamer("tarik"),
         Streamer("mooda"),
         Streamer("stableronaldo"),
-        Streamer("tenz"),
         Streamer("astralspiff"),
-        Streamer("polrrz"),
         Streamer("valynfps"),
-        Streamer("luk_xoxo"),
-        Streamer("inspire"),
         Streamer("jawgemo"),
-        Streamer("ohnepixel"),
         Streamer("shanks_ttv"),
         Streamer("xeppaa"),
-        Streamer("shroud"),
-        Streamer("curry"),
-        Streamer("rainbow6")
+        Streamer("curry")
     ],                                  # Array of streamers (order = priority)
     followers=False,                    # Automatic download the list of your followers
     followers_order=FollowersOrder.ASC  # Sort the followers list by follow date. ASC or DESC
