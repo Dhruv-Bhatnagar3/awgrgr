@@ -81,7 +81,7 @@ twitch_miner = TwitchChannelPointsMiner(
         )
     ),
     streamer_settings=StreamerSettings(
-        make_predictions=False,                  # If you want to Bet / Make prediction
+        make_predictions=True,                  # If you want to Bet / Make prediction
         follow_raid=True,                       # Follow raid to obtain more points
         claim_drops=True,                       # We can't filter rewards base on stream. Set to False for skip viewing counter increase and you will never obtain a drop reward from this script. Issue #21
         claim_moments=True,                     # If set to True, https://help.twitch.tv/s/article/moments will be claimed when available
@@ -90,17 +90,25 @@ twitch_miner = TwitchChannelPointsMiner(
         chat=ChatPresence.ONLINE,               # Join irc chat to increase watch-time [ALWAYS, NEVER, ONLINE, OFFLINE]
         bet=BetSettings(
             strategy=Strategy.HIGH_ODDS,            # Choose you strategy!
-            percentage=20,                       # Place the x% of your channel points
+            percentage=4,                       # Place the x% of your channel points
             percentage_gap=20,                  # Gap difference between outcomesA and outcomesB (for SMART strategy)
             max_points=10000,                   # If the x percentage of your channel points is gt bet_max_points set this value
             stealth_mode=True,                  # If the calculated amount of channel points is GT the highest bet, place the highest value minus 1-2 points Issue #33
-            delay_mode=DelayMode.FROM_END,      # When placing a bet, we will wait until `delay` seconds before the end of the timer
-            delay=30,
+            delay_mode=DelayMode.PERCENTAGE,      # When placing a bet, we will wait until `delay` seconds before the end of the timer
+            delay=0.975,
             minimum_points=1,               # Place the bet only if we have at least 20k points. Issue #113
             filter_condition=FilterCondition(
                 by=OutcomeKeys.ODDS,     # Where apply the filter. Allowed [PERCENTAGE_USERS, ODDS_PERCENTAGE, ODDS, TOP_POINTS, TOTAL_USERS, TOTAL_POINTS]
                 where=Condition.LTE,            # 'by' must be [GT, LT, GTE, LTE] than value
-                value=10
+                value=4)
+            filter_condition=FilterCondition(
+                by=OutcomeKeys.ODDS,
+                where=Condition.GTE,
+                value=1.80)
+            filter_condition=FilterCondition(
+                by=OutcomeKeys.TOTAL_POINTS,
+                where=Condition.GTE,
+                value=10000)
             )
         )
     )
