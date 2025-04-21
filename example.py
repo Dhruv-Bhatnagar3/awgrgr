@@ -135,7 +135,7 @@ twitch_miner.mine(
         Streamer("valynfps"),
         Streamer("luk_xoxo"),
         Streamer("inspire"),
-        Streamer("shahzam"),
+        Streamer("jawgemo"),
         Streamer("ohnepixel"),
         Streamer("shanks_ttv"),
         Streamer("xeppaa"),
