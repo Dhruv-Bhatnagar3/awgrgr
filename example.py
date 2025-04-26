@@ -133,6 +133,7 @@ twitch_miner.mine(
         Streamer("valynfps"),
         Streamer("jawgemo"),
         Streamer("shanks_ttv"),
+        Streamer("Subroza"),
         Streamer("xeppaa"),
         Streamer("curry")
     ],                                  # Array of streamers (order = priority)
