@@ -127,6 +127,7 @@ twitch_miner.mine(
         Streamer("trent_fps"),
         Streamer("eggsterr"),
         Streamer("tarik"),
+        Streamer("fettR6S"),
         Streamer("mooda"),
         Streamer("stableronaldo"),
         Streamer("astralspiff"),
@@ -135,7 +136,7 @@ twitch_miner.mine(
         Streamer("shanks_ttv"),
         Streamer("Subroza"),
         Streamer("xeppaa"),
-        Streamer("curry")
+        Streamer("curry", settings=StreamerSettings(make_predictions=False , follow_raid=True  ,                     watch_streak=True ,                                                                                                                                                                                                                                                       ))
     ],                                  # Array of streamers (order = priority)
     followers=False,                    # Automatic download the list of your followers
     followers_order=FollowersOrder.ASC  # Sort the followers list by follow date. ASC or DESC
