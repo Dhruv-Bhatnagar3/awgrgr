@@ -129,7 +129,7 @@ twitch_miner.mine(
         Streamer("tarik"),
         Streamer("fettR6S"),
         Streamer("mooda"),
-        Streamer("stableronaldo"),
+        Streamer("rainbow6"),
         Streamer("astralspiff"),
         Streamer("valynfps"),
         Streamer("jawgemo"),
